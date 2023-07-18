@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?1&family=Montserrat:wght@300;400&family=Parisienne&display=swap');
+
+/* font-family: 'DM Serif Display', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Parisienne', cursive; */
+
+  @font-face {
+    font-family: DMSerif;
+    src: url("./assets/fonts/DMSerifDisplay-Regular.woff");
+  }
+  @font-face {
+    font-family: Parisienne;
+    src: url("./assets/fonts/Parisienne-Regular.woff");
+  }
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title{
+  font-family: DMSerif;
+}
+
+.sub-title{
+  font-family: Parisienne;
+}
+
+.bg_about{
+  background-image: url("./assets/pictures/about_us_back.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg_review{
+  background-image: url("./assets/pictures/bg_reviews.png");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about1{
+  background-image: url("./assets/pictures/about_us_left_1.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about2{
+  background-image: url("./assets/pictures/about_us_right.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about3{
+  background-image: url("./assets/pictures/about_us_left_2.jpeg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+}
