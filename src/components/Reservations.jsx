@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight, BsPauseFill, BsPlayFill } from 'react-icons/bs';
-import { GoDot, GoDotFill } from 'react-icons/go';
-import OpenTable, { positions } from "react-opentable";
+import React, { useEffect, useState } from 'react'
+import { BsChevronCompactLeft, BsChevronCompactRight, BsPauseFill, BsPlayFill } from 'react-icons/bs'
+import { GoDot, GoDotFill } from 'react-icons/go'
+import OpenTable, { positions } from "react-opentable"
 
 import r1 from "../assets/pictures/r1.png"
 import r2 from "../assets/pictures/r2.png"
@@ -33,28 +33,28 @@ function Reservations() {
       title: "HOST YOUR NEXT PARTY WITH US",
       button: "PARTIES"
     },
-  ];
+  ]
 
   const autoSlideInterval = 3000
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [autoSlide, setAutoSlide] = useState(false)
+  const [autoSlide, setAutoSlide] = useState(true)
 
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
     setCurrentIndex(newIndex)
-  };
+  }
 
   const nextSlide = () => {
     const isLastSlide = currentIndex === slides.length - 1
     const newIndex = isLastSlide ? 0 : currentIndex + 1
     setCurrentIndex(newIndex)
-  };
+  }
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex)
-  };
+  }
 
   useEffect(() => {
     if (!autoSlide) return
@@ -62,13 +62,13 @@ function Reservations() {
     const slideInterval = setInterval(nextSlide, autoSlideInterval)
 
     return () => clearInterval(slideInterval)
-  }, [4000])
+  },)
 
 
   return (
     <>
       <div className='h-[70vh] w-full m-auto relative group '>
-        <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full bg-center bg-cover flex items-center justify-center ease-out duration-500'>
+        <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full bg-center bg-cover flex items-center justify-center ease-out duration-700'>
           <div className='flex flex-col items-center justify-center bg-black/50 w-full h-full py-16 '>
             <p className='text-white text-6xl title font-normal text-center md:text-4xl sm:text-2xl w-[95%]'>{slides[currentIndex].title}</p>
             <button className='uppercase py-3 px-9 my-8 hover:bg-[#1c3149] bg-primaryRed text-white title duration-700'>
@@ -99,7 +99,7 @@ function Reservations() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Reservations;
+export default Reservations

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
+
 import { BsChevronCompactLeft, BsChevronCompactRight, BsPauseFill, BsPlayFill } from 'react-icons/bs'
 import { BiSolidChevronLeftCircle, BiSolidChevronRightCircle } from 'react-icons/bi'
 import { GoDot, GoDotFill } from 'react-icons/go'
@@ -23,11 +25,16 @@ const slides = [
     g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14
 ]
 
+const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+}
+  
+
 const Gallery = () => {
     const autoSlideInterval = 3000
     const [currentIndex, setCurrentIndex] = useState(0)
     const [open, setOpen] = useState(false)
-
 
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0
@@ -53,7 +60,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className='flex items-center justify-center top-0 left-0 h-screen w-screen m-auto !z-50 group bg-black/40 fixed' style={{ visibility: `${open ? "visible" : "hidden"}` }}>
+            <div className='flex items-center justify-center top-0 left-0 h-screen w-screen m-auto !z-50 group bg-black/40 fixed duration-500' style={{ visibility: `${open ? "visible" : "hidden"}`, opacity: `${open ? "1" : "0"}` }}>
                 <div className='relative flex items-center justify-center'>
 
                     <div className="w-[750px] md:w-[85vw] h-[750px] lg:h-auto flex items-center justify-center bg-white">
@@ -74,7 +81,7 @@ const Gallery = () => {
             </div >
 
 
-            <div className="grid grid-cols-5 grid-rows-4 gap-0 row-span-2">
+            <div className="grid grid-cols-5 grid-rows-4 gap-0 row-span-2 md:grid-cols-2">
             {slides.map((slide, slideIndex) => (
                 <div key={slideIndex} onClick={ () => {
                     goToSlide(slideIndex)
@@ -86,7 +93,6 @@ const Gallery = () => {
                 </div>
               ))}
             </div>
-
 
         </div>
     )
