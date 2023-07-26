@@ -6,7 +6,7 @@ This is a clone website of [Americana Restaurant](https://americanalasvegas.com/
 
 ## Live Demo
 
-[Click Me](https://ssms-spv.netlify.app/)
+[Click Me](https://ssms-task-spv.vercel.app/)
 
 
 ## Installation and Local Setup
